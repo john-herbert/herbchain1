@@ -3,6 +3,8 @@
   <groupId>herbchain</groupId>
   <artifactId>herbchain</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <url>http://code.google.com/p/google-gson/</url>
+
 <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
 <dependencies>
 <dependency>
@@ -22,6 +24,17 @@
           <target>1.8</target>
         </configuration>
       </plugin>
+	<plugin>
+	<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-jar-plugin</artifactId>
+		<configuration>
+			<archive>
+				<manifest>
+					<mainClass>HerbChain</mainClass>
+				</manifest>
+			</archive>
+		</configuration>
+	</plugin>
     </plugins>
   </build>
 </project>
