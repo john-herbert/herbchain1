@@ -17,6 +17,8 @@ public class Block {
 		this.timeStamp = new Date().getTime();
 
 		this.hash = calculateHash(); //Making sure we do this after we set the other values.
+									// After we calculate this, we will change it at the mining step
+								
 	}
 
 	//Calculate new hash based on blocks contents
@@ -34,7 +36,10 @@ public class Block {
 		String target = new String(new char[difficulty]).replace('\0', '0'); //Create a string with difficulty * "0"
 		while(!hash.substring( 0, difficulty).equals(target)) {
 			nonce ++;
-			hash = calculateHash();
+			hash = calculateHash(); // Will continue calculate this until we get a hash that matches a hash
+									// with a matching start string of the '00000....' (length depending on the 'difficulty' variable.
+			
+									
 		}
 		System.out.println("Block Mined!!! : " + hash);
 	}
